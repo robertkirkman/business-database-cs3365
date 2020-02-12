@@ -1,8 +1,0 @@
-﻿User Document for CS3365 Team Project - Small Business Database Software
-Connor Irvine, Robert Kirkman, Lora Milam
-Github Link:
-
-
-Goal:
-Potential Users:
-Use Cases:
