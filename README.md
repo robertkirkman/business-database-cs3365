@@ -86,6 +86,9 @@
 4. The system switches the client’s current working table to the specified selection.
 
 **Contribution:**
+
 Robert Kirkman: Modify Field Use Case
+
 Connor Irvine: 
+
 Lora Milam: Export Use Case
