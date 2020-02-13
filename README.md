@@ -38,11 +38,11 @@
 *   **Unrestricted Entries:**
     *   **Actors:** Client
     *   **Stimulus:** The client has decided to change or delete the information contained in a specific cell in the current working table that does not have restricted editing permissions, and has the field, row, and information for the cell, if applicable. 
-*   **Restricted Entries: **
+*   **Restricted Entries:**
     *   **Actors:** Administrator
     *   **Stimulus:** The administrator has decided to change or delete the information contained in a restricted cell in the current working table that only the administrator has editing permissions for, and has the field, row, and information for the cell, if applicable. 
 
-**Response: **The information in the cell is modified to reflect the desired changes.
+**Response:** The information in the cell is modified to reflect the desired changes.
 
 **Normal Flow:**
 1. The client or administrator has decided to change or delete information contained in a specific cell that they have permission to modify.
