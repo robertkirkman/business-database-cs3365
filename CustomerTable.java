@@ -19,7 +19,7 @@ public class CustomerTable
 	{
 		int FieldIndex;
 		if (FieldName == "Name")
-			if ((FieldIndex = CustomerName.indexOf(QueryString)) > 0)
+			if ((FieldIndex = CustomerName.indexOf(QueryString)) != -1)
 				return CustomerName.get(FieldIndex);
 			else return "Entry not found.";
 		else return "Fieldname not found.";
