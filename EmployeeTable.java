@@ -18,7 +18,16 @@ public class EmployeeTable extends Table
 		private ArrayList<String> EmployeeAddress = new ArrayList<String>();
 		private ArrayList<String> EmployeeWorkPhone = new ArrayList<String>();
 		private ArrayList<String> EmployeeHomePhone = new ArrayList<String>();
-		public static final String FieldNames = "Name | Address | Work Phone | Home Phone";
+		public static String FieldNames = "Name | Address | Work Phone | Home Phone";
+		
+		//Constructor
+		public EmployeeTable()
+		{
+			this.EmployeeName.add("None");
+			this.EmployeeAddress.add("None");
+			this.EmployeeWorkPhone.add("None");
+			this.EmployeeHomePhone.add("None");
+		}
 		
 		//Concatenate order information into a readable string for display
 		private String GetEmployeeInfo(int FieldIndex)
@@ -127,32 +136,32 @@ public class EmployeeTable extends Table
 				case "Name":
 				{
 					EmployeeName.add(FieldIndex, EntryStr);
-					EmployeeAddress.add(FieldIndex, "");
-					EmployeeWorkPhone.add(FieldIndex, "");
-					EmployeeHomePhone.add(FieldIndex, "");
+					EmployeeAddress.add(FieldIndex, "None");
+					EmployeeWorkPhone.add(FieldIndex, "None");
+					EmployeeHomePhone.add(FieldIndex, "None");
 					return "\nEmployee name entry created with other fields blank.";
 				}
 				case "Address":
 				{
-					EmployeeName.add(FieldIndex, "");
+					EmployeeName.add(FieldIndex, "None");
 					EmployeeAddress.add(FieldIndex, EntryStr);
-					EmployeeWorkPhone.add(FieldIndex, "");
-					EmployeeHomePhone.add(FieldIndex, "");
+					EmployeeWorkPhone.add(FieldIndex, "None");
+					EmployeeHomePhone.add(FieldIndex, "None");
 					return "\nEmployee address created with other fields blank.";
 				}
 				case "Work Phone":
 				{
-					EmployeeName.add(FieldIndex, "");
-					EmployeeAddress.add(FieldIndex, "");
+					EmployeeName.add(FieldIndex, "None");
+					EmployeeAddress.add(FieldIndex, "None");
 					EmployeeWorkPhone.add(FieldIndex, EntryStr);
-					EmployeeHomePhone.add(FieldIndex, "");
+					EmployeeHomePhone.add(FieldIndex, "None");
 					return "\nEmployee work phone entry created with other fields blank.";
 				}
 				case "Home Phone":
 				{
-					EmployeeName.add(FieldIndex, "");
-					EmployeeAddress.add(FieldIndex, "");
-					EmployeeWorkPhone.add(FieldIndex, "");
+					EmployeeName.add(FieldIndex, "None");
+					EmployeeAddress.add(FieldIndex, "None");
+					EmployeeWorkPhone.add(FieldIndex, "None");
 					EmployeeHomePhone.add(FieldIndex, EntryStr);
 					return "\nEmployee home phone created with other fields blank.";
 				}

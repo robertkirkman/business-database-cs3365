@@ -15,15 +15,15 @@ public class CustomerTable extends Table
 	private ArrayList<String> CustomerAddress = new ArrayList<String>();
 	private ArrayList<String> CustomerWorkPhone = new ArrayList<String>();
 	private ArrayList<String> CustomerCellPhone = new ArrayList<String>();
-	public static final String FieldNames = "Name | Address | Work Phone | Cell Phone";
+	public static String FieldNames = "Name | Address | Work Phone | Cell Phone";
 	
 	//Constructor
 	public CustomerTable()
 	{
-		this.CustomerName.add("");
-		this.CustomerAddress.add("");
-		this.CustomerWorkPhone.add("");
-		this.CustomerCellPhone.add("");
+		this.CustomerName.add("None");
+		this.CustomerAddress.add("None");
+		this.CustomerWorkPhone.add("None");
+		this.CustomerCellPhone.add("None");
 	}
 	
 	//Concatenate customer information into a readable string for display
@@ -142,33 +142,33 @@ public class CustomerTable extends Table
 			case "Name":
 				{
 					CustomerName.add(FieldIndex, EntryStr);
-					CustomerAddress.add(FieldIndex, "");
-					CustomerCellPhone.add(FieldIndex, "");
-					CustomerWorkPhone.add(FieldIndex, "");
+					CustomerAddress.add(FieldIndex, "None");
+					CustomerCellPhone.add(FieldIndex, "None");
+					CustomerWorkPhone.add(FieldIndex, "None");
 					return "Name entry created with other fields blank.";
 				}
 			case "Address":
 				{
-					CustomerName.add(FieldIndex, "");
+					CustomerName.add(FieldIndex, "None");
 					CustomerAddress.add(FieldIndex, EntryStr);
-					CustomerCellPhone.add(FieldIndex, "");
-					CustomerWorkPhone.add(FieldIndex, "");
+					CustomerCellPhone.add(FieldIndex, "None");
+					CustomerWorkPhone.add(FieldIndex, "None");
 					return "Address entry created with other fields blank.";
 				}
 			case "Work Phone":
 				{
-					CustomerName.add(FieldIndex, "");
-					CustomerAddress.add(FieldIndex, "");
-					CustomerCellPhone.add(FieldIndex, "");
+					CustomerName.add(FieldIndex, "None");
+					CustomerAddress.add(FieldIndex, "None");
+					CustomerCellPhone.add(FieldIndex, "None");
 					CustomerWorkPhone.add(FieldIndex, EntryStr);
 					return "Work phone entry created with other fields blank.";
 				}
 			case "Cell Phone":
 				{
-					CustomerName.add(FieldIndex, "");
-					CustomerAddress.add(FieldIndex, "");
+					CustomerName.add(FieldIndex, "None");
+					CustomerAddress.add(FieldIndex, "None");
 					CustomerCellPhone.add(FieldIndex, EntryStr);
-					CustomerWorkPhone.add(FieldIndex, "");
+					CustomerWorkPhone.add(FieldIndex, "None");
 					return "Cell phone entry created with other fields blank.";
 				}
 			default:

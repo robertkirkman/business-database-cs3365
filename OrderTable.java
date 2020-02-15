@@ -18,7 +18,16 @@ public class OrderTable extends Table
 	private ArrayList<String> OrderItem = new ArrayList<String>();
 	private ArrayList<String> OrderItemAmount = new ArrayList<String>();
 	private ArrayList<String> OrderDate = new ArrayList<String>();
-	public static final String FieldNames = "OrderNumber | Item | Amount | Date";
+	public static String FieldNames = "OrderNumber | Item | Amount | Date";
+	
+	//Constructor
+	public OrderTable()
+	{
+		this.OrderNumber.add("None");
+		this.OrderItem.add("None");
+		this.OrderItemAmount.add("None");
+		this.OrderDate.add("None");
+	}
 	
 	//Concatenate order information into a readable string for display
 	private String GetOrderInfo(int FieldIndex)
@@ -127,32 +136,32 @@ public class OrderTable extends Table
 			case "OrderNumber":
 			{
 				OrderNumber.add(FieldIndex, EntryStr);
-				OrderItem.add(FieldIndex, "");
-				OrderItemAmount.add(FieldIndex, "");
-				OrderDate.add(FieldIndex, "");
+				OrderItem.add(FieldIndex, "None");
+				OrderItemAmount.add(FieldIndex, "None");
+				OrderDate.add(FieldIndex, "None");
 				return "\nOrder Number entry created with other fields blank.";
 			}
 			case "Item":
 			{
-				OrderNumber.add(FieldIndex, "");
+				OrderNumber.add(FieldIndex, "None");
 				OrderItem.add(FieldIndex, EntryStr);
-				OrderItemAmount.add(FieldIndex, "");
-				OrderDate.add(FieldIndex, "");
+				OrderItemAmount.add(FieldIndex, "None");
+				OrderDate.add(FieldIndex, "None");
 				return "\nItem entry created with other fields blank.";
 			}
 			case "Amount":
 			{
-				OrderNumber.add(FieldIndex, "");
-				OrderItem.add(FieldIndex, "");
+				OrderNumber.add(FieldIndex, "None");
+				OrderItem.add(FieldIndex, "None");
 				OrderItemAmount.add(FieldIndex, EntryStr);
-				OrderDate.add(FieldIndex, "");
+				OrderDate.add(FieldIndex, "None");
 				return "\nItem Amount entry created with other fields blank.";
 			}
 			case "Date":
 			{
-				OrderNumber.add(FieldIndex, "");
-				OrderItem.add(FieldIndex, "");
-				OrderItemAmount.add(FieldIndex, "");
+				OrderNumber.add(FieldIndex, "None");
+				OrderItem.add(FieldIndex, "None");
+				OrderItemAmount.add(FieldIndex, "None");
 				OrderDate.add(FieldIndex, EntryStr);
 				return "\nDate entry created with other fields blank.";
 			}
