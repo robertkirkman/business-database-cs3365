@@ -13,6 +13,7 @@ public class CustomerTable
 	private ArrayList<String> CustomerWorkPhone = new ArrayList<String>();
 	private ArrayList<String> CustomerCellPhone = new ArrayList<String>();
 	private int FieldIndex;
+	public static final String FieldNames = "Name | Address | Work Phone | Cell Phone";
 	
 	//Concatenate customer information into a readable string for display
 	private String GetCustomerInfo(int FieldIndex)
@@ -119,7 +120,7 @@ public class CustomerTable
 			return "Invalid insertion index: " + error.getMessage();
 		}
 		if (FieldIndex < 0 || FieldIndex >= CustomerName.size())
-			return "Invalid insertion index: our of range";
+			return "Invalid insertion index: out of range";
 		//use switch statement to match input with field name
 		switch(FieldName)
 		{
