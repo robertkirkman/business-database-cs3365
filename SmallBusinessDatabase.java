@@ -121,7 +121,7 @@ public class SmallBusinessDatabase
 				{
 			        String[] filepath = new String[5];
     				filepath[0]=DatabaseFilenameObj.getAbsolutePath();
-    				//Export.Export(filepath);
+    				ExportCSV.ExportCSV(filepath);
     				System.out.println("Your file has been exported");
     				break;
 				}
