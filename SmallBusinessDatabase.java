@@ -3,6 +3,7 @@
  *  Course.......: CS 3365
  *  Description..: Customer Table Class for Small Business Database
  */
+import java.util.Arrays;
 import java.util.Scanner;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -66,38 +67,45 @@ public class SmallBusinessDatabase
 		while (RunBehaviorLoop)
 		{
 			System.out.print("> ");
-			InputBuf = UserInput.next();
+			InputBuf = UserInput.nextLine();
 			
 			//basic command parsing
-			switch(InputBuf)
+			String[] InputBufArray = (InputBuf.split("\\s+"));
+			switch(InputBufArray[0])
 			{
 				case "query":
 				{
-					
+					if (InputBufArray.length == 3)
+						System.out.println(CustomerTableObj.QueryTableField(InputBufArray[1], InputBufArray[2]));
+					break;
 				}
 				case "modify":
 				{
-					
+					break;
 				}
 				case "expand":
 				{
-					
+					if (InputBufArray.length == 4)
+						System.out.println(CustomerTableObj.ExpandTableField(InputBufArray[1], InputBufArray[2], 
+							InputBufArray[3]));
+					break;
 				}
 				case "delete":
 				{
-					
+					break;
 				}
 				case "export":
 				{
-					
+					break;
 				}
 				case "changetable":
 				{
-					
+					break;
 				}
 				case "quit":
 				{
 					RunBehaviorLoop = false;
+					break;
 				}
 				default:
 				{
