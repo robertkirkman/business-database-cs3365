@@ -89,6 +89,6 @@
 
 Robert Kirkman: Modify Field Use Case
 
-Connor Irvine: 
+Connor Irvine: Query Field Use Case
 
 Lora Milam: Export Use Case
