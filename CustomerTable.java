@@ -15,6 +15,15 @@ public class CustomerTable
 	private int FieldIndex;
 	public static final String FieldNames = "Name | Address | Work Phone | Cell Phone";
 	
+	//Constructor
+	public CustomerTable()
+	{
+		CustomerName.add("");
+		CustomerAddress.add("");
+		CustomerWorkPhone.add("");
+		CustomerCellPhone.add("");
+	}
+	
 	//Concatenate customer information into a readable string for display
 	private String GetCustomerInfo(int FieldIndex)
 	{
@@ -119,7 +128,7 @@ public class CustomerTable
 		{
 			return "Invalid insertion index: " + error.getMessage();
 		}
-		if (FieldIndex < 0 || FieldIndex >= CustomerName.size())
+		if ((FieldIndex < 0) || (FieldIndex >= CustomerName.size()))
 			return "Invalid insertion index: out of range";
 		//use switch statement to match input with field name
 		switch(FieldName)
