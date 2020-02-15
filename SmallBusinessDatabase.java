@@ -11,7 +11,7 @@ public class SmallBusinessDatabase
 	public static void main(String[] args)throws IOException
 	{
 		// Declare the database filename
-		String DatabaseFilename = "DB.ser";
+		String DatabaseFilename = "DB.csv";
 		
 		// Declare the behavior loop condition
 		boolean RunBehaviorLoop = true;
