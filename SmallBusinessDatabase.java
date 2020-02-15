@@ -29,7 +29,7 @@ public class SmallBusinessDatabase
 		Scanner UserInput = new Scanner(System.in);
 		
 		// Create a null instance of CustomerTable
-		CustomerTable CustomerTableObj = null;
+		CustomerTable CustomerTableObj = new CustomerTable();
 		
 		// Check if the database filename exists, and if not, skip reading from a file
 		File DatabaseFilenameObj = new File(DatabaseFilename);
@@ -61,12 +61,6 @@ public class SmallBusinessDatabase
 	            System.out.println("IOException: " + error.getMessage()); 
 	        } 
 		}
-		else
-		{
-			// Instantiate the customers table
-			CustomerTableObj = new CustomerTable();
-		}
-		
 
         // Enter main behavior loop and await user input 
 		while (RunBehaviorLoop)
@@ -85,13 +79,37 @@ public class SmallBusinessDatabase
 				{
 					
 				}
-				case "export"
+				case "expand":
 				{
 					
 				}
-				case "
+				case "delete":
+				{
+					
+				}
+				case "export":
+				{
+					
+				}
+				case "changetable":
+				{
+					
+				}
+				case "quit":
+				{
+					RunBehaviorLoop = false;
+				}
 				default:
-					System.out.println();
+				{
+					System.out.println("Commands: ");
+					System.out.println("query [" + CustomerTable.FieldNames + "] [query string]");
+					System.out.println("modify [" + CustomerTable.FieldNames + "] [query string] [entry string]");
+					System.out.println("expand [" + CustomerTable.FieldNames + "] [entry string] [index integer]");
+					System.out.println("delete [" + CustomerTable.FieldNames + "] [query string]");
+					System.out.println("export");
+					System.out.println("changetable");
+					System.out.println("quit");
+				}
 			}
 		}
 		
