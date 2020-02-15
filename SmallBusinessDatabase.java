@@ -94,8 +94,11 @@ public class SmallBusinessDatabase
 				{
 					break;
 				}
-				case "export":
+				case "export": //exports CSV as a TXT
 				{
+				        String[] filepath = new String[5];
+        				filepath[0]=DatabaseFilenameObj.getAbsolutePath();
+        				Export.Export(filepath);
 					break;
 				}
 				case "changetable":
