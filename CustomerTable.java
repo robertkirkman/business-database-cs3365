@@ -3,25 +3,27 @@
  *  Course.......: CS 3365
  *  Description..: Customer Table Class for Small Business Database
  */
+
+package smallbusinessdb;
+
 import java.util.ArrayList;
 
-public class CustomerTable
+public class CustomerTable extends Table
 {
 	// Pre-chosen table fields using dynamically allocated arrays
 	private ArrayList<String> CustomerName = new ArrayList<String>();
 	private ArrayList<String> CustomerAddress = new ArrayList<String>();
 	private ArrayList<String> CustomerWorkPhone = new ArrayList<String>();
 	private ArrayList<String> CustomerCellPhone = new ArrayList<String>();
-	private int FieldIndex;
 	public static final String FieldNames = "Name | Address | Work Phone | Cell Phone";
 	
 	//Constructor
 	public CustomerTable()
 	{
-		CustomerName.add("");
-		CustomerAddress.add("");
-		CustomerWorkPhone.add("");
-		CustomerCellPhone.add("");
+		this.CustomerName.add("");
+		this.CustomerAddress.add("");
+		this.CustomerWorkPhone.add("");
+		this.CustomerCellPhone.add("");
 	}
 	
 	//Concatenate customer information into a readable string for display
@@ -33,6 +35,7 @@ public class CustomerTable
 	}
 	
 	//Query method
+	@Override
 	public String QueryTableField(String FieldName, String QueryStr)
 	{
 		//use indexOf to search corresponding ArrayList for desired information
@@ -69,6 +72,7 @@ public class CustomerTable
 	}
 	
 	//Modify method for existing entries
+	@Override
 	public String ModifyTableField(String FieldName, String QueryStr, String EntryStr)
 	{
 		//use indexOf to search corresponding ArrayList for desired information
@@ -117,6 +121,7 @@ public class CustomerTable
 	}
 	
 	//Creation method for new entries
+	@Override
 	public String ExpandTableField(String FieldName, String EntryStr, String IndexStr)
 	{
 		//attempt to convert IndexStr to an integer for use in indexing the table
@@ -172,6 +177,7 @@ public class CustomerTable
 	}
 	
 	//Deleting entries
+	@Override
 	public String DeleteFieldEntry(String FieldName, String QueryStr)
 	{
 		//use indexOf to search corresponding ArrayList for desired information

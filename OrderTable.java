@@ -4,7 +4,6 @@
  * Description..: Order table class for small business database
  */
 
-
 package smallbusinessdb;
 
 import java.io.*;
@@ -12,25 +11,14 @@ import java.util.*;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-public class OrderTable 
+public class OrderTable extends Table
 {
 	// Pre-chosen table fields using dynamically allocated arrays
 	private ArrayList<String> OrderNumber = new ArrayList<String>();
 	private ArrayList<String> OrderItem = new ArrayList<String>();
 	private ArrayList<String> OrderItemAmount = new ArrayList<String>();
 	private ArrayList<String> OrderDate = new ArrayList<String>();
-	private int FieldIndex;
 	public static final String FieldNames = "OrderNumber | Item | Amount | Date";
-	
-	
-	// constructor	
-	public OrderTable()
-	{
-		OrderNumber.add("");
-		OrderItem.add("");
-		OrderItemAmount.add("");
-		OrderDate.add("");
-	}
 	
 	//Concatenate order information into a readable string for display
 	private String GetOrderInfo(int FieldIndex)
@@ -130,7 +118,7 @@ public class OrderTable
 		{
 			return "\nInvalid insertion index: " + error.getMessage();
 		}
-		if (Fieldindex < 0 || FieldIndex >= OrderNumber.size())
+		if (FieldIndex < 0 || FieldIndex >= OrderNumber.size())
 			return "\nInvalid insertion index: out of range";
 		
 		//use switch statement to match input with field name
@@ -141,7 +129,7 @@ public class OrderTable
 				OrderNumber.add(FieldIndex, EntryStr);
 				OrderItem.add(FieldIndex, "");
 				OrderItemAmount.add(FieldIndex, "");
-				OrderDate.add(fieldIndex, "");
+				OrderDate.add(FieldIndex, "");
 				return "\nOrder Number entry created with other fields blank.";
 			}
 			case "Item":
@@ -149,7 +137,7 @@ public class OrderTable
 				OrderNumber.add(FieldIndex, "");
 				OrderItem.add(FieldIndex, EntryStr);
 				OrderItemAmount.add(FieldIndex, "");
-				OrderDate.add(fieldIndex, "");
+				OrderDate.add(FieldIndex, "");
 				return "\nItem entry created with other fields blank.";
 			}
 			case "Amount":
@@ -157,7 +145,7 @@ public class OrderTable
 				OrderNumber.add(FieldIndex, "");
 				OrderItem.add(FieldIndex, "");
 				OrderItemAmount.add(FieldIndex, EntryStr);
-				OrderDate.add(fieldIndex, "");
+				OrderDate.add(FieldIndex, "");
 				return "\nItem Amount entry created with other fields blank.";
 			}
 			case "Date":
@@ -165,9 +153,11 @@ public class OrderTable
 				OrderNumber.add(FieldIndex, "");
 				OrderItem.add(FieldIndex, "");
 				OrderItemAmount.add(FieldIndex, "");
-				OrderDate.add(fieldIndex, EntryStr);
+				OrderDate.add(FieldIndex, EntryStr);
 				return "\nDate entry created with other fields blank.";
 			}
+			default:
+				return "Fieldname not found.";
 		}
 	}
 	

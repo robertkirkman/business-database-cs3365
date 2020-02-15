@@ -11,23 +11,14 @@ import java.util.*;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-public class EmployeeTable {
+public class EmployeeTable extends Table 
+{
 	// Pre-chosen table fields using dynamically allocated arrays
 		private ArrayList<String> EmployeeName = new ArrayList<String>();
 		private ArrayList<String> EmployeeAddress = new ArrayList<String>();
 		private ArrayList<String> EmployeeWorkPhone = new ArrayList<String>();
 		private ArrayList<String> EmployeeHomePhone = new ArrayList<String>();
-		private int FieldIndex;
 		public static final String FieldNames = "Name | Address | Work Phone | Home Phone";
-		
-		//constructor
-		public EmployeeTable()
-		{
-			EmployeeName.add("");
-			EmployeeAddress.add("");
-			EmployeeWorkPhone.add("");
-			EmployeeHomePhone.add("");
-		}
 		
 		//Concatenate order information into a readable string for display
 		private String GetEmployeeInfo(int FieldIndex)
@@ -127,7 +118,7 @@ public class EmployeeTable {
 			{
 				return "\nInvalid insertion index: " + error.getMessage();
 			}
-			if (Fieldindex < 0 || FieldIndex >= OrderNumber.size())
+			if (FieldIndex < 0 || FieldIndex >= EmployeeName.size())
 				return "\nInvalid insertion index: out of range";
 			
 			//use switch statement to match input with field name
@@ -138,7 +129,7 @@ public class EmployeeTable {
 					EmployeeName.add(FieldIndex, EntryStr);
 					EmployeeAddress.add(FieldIndex, "");
 					EmployeeWorkPhone.add(FieldIndex, "");
-					EmployeeHomePhone.add(fieldIndex, "");
+					EmployeeHomePhone.add(FieldIndex, "");
 					return "\nEmployee name entry created with other fields blank.";
 				}
 				case "Address":
@@ -146,7 +137,7 @@ public class EmployeeTable {
 					EmployeeName.add(FieldIndex, "");
 					EmployeeAddress.add(FieldIndex, EntryStr);
 					EmployeeWorkPhone.add(FieldIndex, "");
-					EmployeeHomePhone.add(fieldIndex, "");
+					EmployeeHomePhone.add(FieldIndex, "");
 					return "\nEmployee address created with other fields blank.";
 				}
 				case "Work Phone":
@@ -154,7 +145,7 @@ public class EmployeeTable {
 					EmployeeName.add(FieldIndex, "");
 					EmployeeAddress.add(FieldIndex, "");
 					EmployeeWorkPhone.add(FieldIndex, EntryStr);
-					EmployeeHomePhone.add(fieldIndex, "");
+					EmployeeHomePhone.add(FieldIndex, "");
 					return "\nEmployee work phone entry created with other fields blank.";
 				}
 				case "Home Phone":
@@ -162,9 +153,11 @@ public class EmployeeTable {
 					EmployeeName.add(FieldIndex, "");
 					EmployeeAddress.add(FieldIndex, "");
 					EmployeeWorkPhone.add(FieldIndex, "");
-					EmployeeHomePhone.add(fieldIndex, EntryStr);
+					EmployeeHomePhone.add(FieldIndex, EntryStr);
 					return "\nEmployee home phone created with other fields blank.";
 				}
+				default:
+					return "Fieldname not found.";
 			}
 		}
 		

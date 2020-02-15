@@ -3,7 +3,7 @@
  *  Course.......: CS 3365
  *  Description..: Export Function Class for Small Business Database
  */
-package softwareengineering;
+package smallbusinessdb;
 
 import java.io.*;
 import java.util.*;

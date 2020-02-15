@@ -1,17 +1,26 @@
 /* 
  *  Author ......: Robert Kirkman
  *  Course.......: CS 3365
- *  Description..: Customer Table Class for Small Business Database
+ *  Description..: Wrapper class and main method for Small Business Database
  */
-import java.util.*;
-import java.io.*;
+package smallbusinessdb;
+
+import java.util.Arrays;
+import java.util.Scanner;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.io.File;
 
 public class SmallBusinessDatabase
 {
 	public static void main(String[] args)throws IOException
 	{
 		// Declare the database filename
-		String DatabaseFilename = "DB.csv";
+		String DatabaseFilename = "DB.ser";
 		
 		// Declare the behavior loop condition
 		boolean RunBehaviorLoop = true;
@@ -22,8 +31,15 @@ public class SmallBusinessDatabase
 		// Initialize the input scanner
 		Scanner UserInput = new Scanner(System.in);
 		
-		// Create a null instance of CustomerTable
-		CustomerTable CustomerTableObj = new CustomerTable();
+		// Create a new instance of CustomerTable
+		Table CustomerTableObj = new CustomerTable();
+		
+		// Create a null instance of Table to swap to
+		Table CurrentTableObj = null;
+		
+		// Create instances of OrderTable and EmployeeTable
+		Table EmployeeTableObj = new EmployeeTable();
+		Table OrderTableObj = new OrderTable();
 		
 		// Check if the database filename exists, and if not, skip reading from a file
 		File DatabaseFilenameObj = new File(DatabaseFilename);
@@ -38,7 +54,9 @@ public class SmallBusinessDatabase
 	            ObjectInputStream DatabaseObjInStream = new ObjectInputStream(DatabaseFileInStream); 
 	              
 	            // Deserialize objects
-	            CustomerTableObj = (CustomerTable)DatabaseObjInStream.readObject(); 
+	            CustomerTableObj = (CustomerTable)DatabaseObjInStream.readObject();
+	            EmployeeTableObj = (EmployeeTable)DatabaseObjInStream.readObject();
+	            OrderTableObj = (OrderTable)DatabaseObjInStream.readObject();
 	            
 	            //close object stream and file
 	            DatabaseObjInStream.close(); 
@@ -55,6 +73,9 @@ public class SmallBusinessDatabase
 	            System.out.println("IOException: " + error.getMessage()); 
 	        } 
 		}
+		
+		// Swap current table object to CustomerTableObj
+		CurrentTableObj = CustomerTableObj;
 
         // Enter main behavior loop and await user input 
 		while (RunBehaviorLoop)
@@ -69,34 +90,67 @@ public class SmallBusinessDatabase
 				case "query":
 				{
 					if (InputBufArray.length == 3)
-						System.out.println(CustomerTableObj.QueryTableField(InputBufArray[1], InputBufArray[2]));
+						System.out.println(CurrentTableObj.QueryTableField(InputBufArray[1], InputBufArray[2]));
+					else System.out.println("Incorrect parameters.");
 					break;
 				}
 				case "modify":
 				{
+                    if (InputBufArray.length == 4)
+                        System.out.println(CurrentTableObj.ModifyTableField(InputBufArray[1], InputBufArray[2], 
+                            InputBufArray[3]));
+                    else System.out.println("Incorrect parameters.");
 					break;
 				}
 				case "expand":
 				{
 					if (InputBufArray.length == 4)
-						System.out.println(CustomerTableObj.ExpandTableField(InputBufArray[1], InputBufArray[2], 
+						System.out.println(CurrentTableObj.ExpandTableField(InputBufArray[1], InputBufArray[2], 
 							InputBufArray[3]));
+					else System.out.println("Incorrect parameters.");
 					break;
 				}
 				case "delete":
 				{
+					if (InputBufArray.length == 3)
+                        System.out.println(CurrentTableObj.DeleteFieldEntry(InputBufArray[1], InputBufArray[2]));
+					else System.out.println("Incorrect parameters.");
 					break;
 				}
 				case "export": //exports CSV as a TXT
 				{
-				        String[] filepath = new String[5];
-        				filepath[0]=DatabaseFilenameObj.getAbsolutePath();
-        				Export.Export(filepath);
-					System.out.println("Your file has been exported");
-					break;
+			        String[] filepath = new String[5];
+    				filepath[0]=DatabaseFilenameObj.getAbsolutePath();
+    				//Export.Export(filepath);
+    				System.out.println("Your file has been exported");
+    				break;
 				}
 				case "changetable":
 				{
+					if (InputBufArray.length == 2)
+					{
+						switch (InputBufArray[1])
+						{
+							case "Customers":
+							{
+								CurrentTableObj = CustomerTableObj;
+								break;
+							}
+							case "Orders":
+							{
+								CurrentTableObj = OrderTableObj;
+								break;
+							}
+							case "Employees":
+							{
+								CurrentTableObj = EmployeeTableObj;
+								break;
+							}
+							default:
+								System.out.println("Invalid table name.");
+						}
+					}
+					else System.out.println("Incorrect parameters.");
 					break;
 				}
 				case "quit":
@@ -104,6 +158,7 @@ public class SmallBusinessDatabase
 					RunBehaviorLoop = false;
 					break;
 				}
+				//help for commands
 				default:
 				{
 					System.out.println("Commands: ");
@@ -112,7 +167,7 @@ public class SmallBusinessDatabase
 					System.out.println("expand [" + CustomerTable.FieldNames + "] [entry string] [index integer]");
 					System.out.println("delete [" + CustomerTable.FieldNames + "] [query string]");
 					System.out.println("export");
-					System.out.println("changetable");
+					System.out.println("changetable [Customers | Orders | Employees]");
 					System.out.println("quit");
 				}
 			}
@@ -125,7 +180,9 @@ public class SmallBusinessDatabase
             ObjectOutputStream DatabaseObjOutStream = new ObjectOutputStream(DatabaseFileOutStream); 
               
             // Write object into the file stream
-            DatabaseObjOutStream.writeObject(CustomerTableObj); 
+            DatabaseObjOutStream.writeObject(OrderTableObj); 
+            DatabaseObjOutStream.writeObject(EmployeeTableObj); 
+            DatabaseObjOutStream.writeObject(OrderTableObj); 
               
             DatabaseObjOutStream.close(); 
             DatabaseFileOutStream.close(); 
