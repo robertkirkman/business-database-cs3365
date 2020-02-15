@@ -3,7 +3,6 @@
  *  Course.......: CS 3365
  *  Description..: Customer Table Class for Small Business Database
  */
-import java.util.Arrays;
 import java.util.ArrayList;
 
 public class CustomerTable
@@ -13,6 +12,7 @@ public class CustomerTable
 	private ArrayList<String> CustomerAddress = new ArrayList<String>();
 	private ArrayList<String> CustomerWorkPhone = new ArrayList<String>();
 	private ArrayList<String> CustomerCellPhone = new ArrayList<String>();
+	private int FieldIndex;
 	
 	//Concatenate customer information into a readable string for display
 	private String GetCustomerInfo(int FieldIndex)
@@ -23,33 +23,32 @@ public class CustomerTable
 	}
 	
 	//Query method
-	public String QueryTableField(String FieldName, String QueryString)
+	public String QueryTableField(String FieldName, String QueryStr)
 	{
-		int FieldIndex;
 		//use indexOf to search corresponding ArrayList for desired information
 		switch(FieldName)
 		{
 			case "Name":
 				{
-					if ((FieldIndex = CustomerName.indexOf(QueryString)) != -1)
+					if ((FieldIndex = CustomerName.indexOf(QueryStr)) != -1)
 						return GetCustomerInfo(FieldIndex);
 					else return "Name entry not found.";
 				}
 			case "Address":
 				{
-					if ((FieldIndex = CustomerAddress.indexOf(QueryString)) != -1)
+					if ((FieldIndex = CustomerAddress.indexOf(QueryStr)) != -1)
 						return GetCustomerInfo(FieldIndex);
 					else return "Address entry not found.";
 				}
 			case "Work Phone":
 				{
-					if ((FieldIndex = CustomerWorkPhone.indexOf(QueryString)) != -1)
+					if ((FieldIndex = CustomerWorkPhone.indexOf(QueryStr)) != -1)
 						return GetCustomerInfo(FieldIndex);
 					else return "Work phone entry not found.";
 				}
 			case "Cell Phone":
 				{
-					if ((FieldIndex = CustomerCellPhone.indexOf(QueryString)) != -1)
+					if ((FieldIndex = CustomerCellPhone.indexOf(QueryStr)) != -1)
 						return GetCustomerInfo(FieldIndex);
 					else return "Cell phone entry not found.";
 				}
@@ -60,46 +59,47 @@ public class CustomerTable
 	}
 	
 	//Modify method for existing entries
-	public String ModifyTableField(String FieldName, String QueryString, String EntryString)
+	public String ModifyTableField(String FieldName, String QueryStr, String EntryStr)
 	{
-		int FieldIndex;
+		//use indexOf to search corresponding ArrayList for desired information
 		switch(FieldName)
 		{
+			//replace contents of specified entry with the desired new information
 			case "Name":
 				{
-					if ((FieldIndex = CustomerName.indexOf(QueryString)) != -1)
+					if ((FieldIndex = CustomerName.indexOf(QueryStr)) != -1)
 					{
-						CustomerName.set(FieldIndex, EntryString);
-						return "Entry modified.";
+						CustomerName.set(FieldIndex, EntryStr);
+						return "Name entry modified.";
 					}
-					else return "Entry not found.";
+					else return "Name entry not found.";
 				}
 			case "Address":
 				{
-					if ((FieldIndex = CustomerName.indexOf(QueryString)) != -1)
+					if ((FieldIndex = CustomerAddress.indexOf(QueryStr)) != -1)
 					{
-						CustomerName.set(FieldIndex, EntryString);
-						return "Entry modified.";
+						CustomerAddress.set(FieldIndex, EntryStr);
+						return "Address entry modified.";
 					}
-					else return "Entry not found.";
+					else return "Address entry not found.";
 				}
 			case "Work Phone":
 				{
-					if ((FieldIndex = CustomerName.indexOf(QueryString)) != -1)
+					if ((FieldIndex = CustomerWorkPhone.indexOf(QueryStr)) != -1)
 					{
-						CustomerName.set(FieldIndex, EntryString);
-						return "Entry modified.";
+						CustomerWorkPhone.set(FieldIndex, EntryStr);
+						return "Work phone entry modified.";
 					}
-					else return "Entry not found.";
+					else return "Work phone entry not found.";
 				}
 			case "Cell Phone":
 				{
-					if ((FieldIndex = CustomerName.indexOf(QueryString)) != -1)
+					if ((FieldIndex = CustomerCellPhone.indexOf(QueryStr)) != -1)
 					{
-						CustomerName.set(FieldIndex, EntryString);
-						return "Entry modified.";
+						CustomerCellPhone.set(FieldIndex, EntryStr);
+						return "Cell phone entry modified.";
 					}
-					else return "Entry not found.";
+					else return "Cell phone entry not found.";
 				}
 			default:
 				return "Fieldname not found.";
@@ -107,11 +107,117 @@ public class CustomerTable
 	}
 	
 	//Creation method for new entries
-	public String ExpandTableField(String FieldName, String EntryString)
+	public String ExpandTableField(String FieldName, String EntryStr, String IndexStr)
 	{
-		
+		//attempt to convert IndexStr to an integer for use in indexing the table
+		try
+		{
+			FieldIndex = Integer.parseInt(IndexStr);
+		}
+		catch (NumberFormatException error)
+		{
+			return "Invalid insertion index: " + error.getMessage();
+		}
+		if (FieldIndex < 0 || FieldIndex >= CustomerName.size())
+			return "Invalid insertion index: our of range";
+		//use switch statement to match input with field name
+		switch(FieldName)
+		{
+			//push new entries into the ArrayLists with the selected field containing the desired new information
+			case "Name":
+				{
+					CustomerName.add(FieldIndex, EntryStr);
+					CustomerAddress.add(FieldIndex, "");
+					CustomerCellPhone.add(FieldIndex, "");
+					CustomerWorkPhone.add(FieldIndex, "");
+					return "Name entry created with other fields blank.";
+				}
+			case "Address":
+				{
+					CustomerName.add(FieldIndex, "");
+					CustomerAddress.add(FieldIndex, EntryStr);
+					CustomerCellPhone.add(FieldIndex, "");
+					CustomerWorkPhone.add(FieldIndex, "");
+					return "Address entry created with other fields blank.";
+				}
+			case "Work Phone":
+				{
+					CustomerName.add(FieldIndex, "");
+					CustomerAddress.add(FieldIndex, "");
+					CustomerCellPhone.add(FieldIndex, "");
+					CustomerWorkPhone.add(FieldIndex, EntryStr);
+					return "Work phone entry created with other fields blank.";
+				}
+			case "Cell Phone":
+				{
+					CustomerName.add(FieldIndex, "");
+					CustomerAddress.add(FieldIndex, "");
+					CustomerCellPhone.add(FieldIndex, EntryStr);
+					CustomerWorkPhone.add(FieldIndex, "");
+					return "Cell phone entry created with other fields blank.";
+				}
+			default:
+				return "Fieldname not found.";
+		}
 	}
 	
 	//Deleting entries
-	private void DeleteFieldEntry(String FieldName, String QueryString)
+	public String DeleteFieldEntry(String FieldName, String QueryStr)
+	{
+		//use indexOf to search corresponding ArrayList for desired information
+		switch(FieldName)
+		{
+			//delete contents of specified entry and corresponding fields
+			case "Name":
+				{
+					if ((FieldIndex = CustomerName.indexOf(QueryStr)) != -1)
+					{
+						CustomerName.remove(FieldIndex);
+						CustomerAddress.remove(FieldIndex);
+						CustomerWorkPhone.remove(FieldIndex);
+						CustomerCellPhone.remove(FieldIndex);
+						return "Name entry and other fields deleted.";
+					}
+					else return "Name entry not found.";
+				}
+			case "Address":
+				{
+					if ((FieldIndex = CustomerAddress.indexOf(QueryStr)) != -1)
+					{
+						CustomerName.remove(FieldIndex);
+						CustomerAddress.remove(FieldIndex);
+						CustomerWorkPhone.remove(FieldIndex);
+						CustomerCellPhone.remove(FieldIndex);
+						return "Address entry and other fields deleted.";
+					}
+					else return "Address entry not found.";
+				}
+			case "Work Phone":
+				{
+					if ((FieldIndex = CustomerWorkPhone.indexOf(QueryStr)) != -1)
+					{
+						CustomerName.remove(FieldIndex);
+						CustomerAddress.remove(FieldIndex);
+						CustomerWorkPhone.remove(FieldIndex);
+						CustomerCellPhone.remove(FieldIndex);
+						return "Work phone entry and other fields deleted.";
+					}
+					else return "Work phone entry not found.";
+				}
+			case "Cell Phone":
+				{
+					if ((FieldIndex = CustomerCellPhone.indexOf(QueryStr)) != -1)
+					{
+						CustomerName.remove(FieldIndex);
+						CustomerAddress.remove(FieldIndex);
+						CustomerWorkPhone.remove(FieldIndex);
+						CustomerCellPhone.remove(FieldIndex);
+						return "Cell phone entry and other fields deleted.";
+					}
+					else return "Cell phone entry not found.";
+				}
+			default:
+				return "Fieldname not found.";
+		}
+	}
 }
