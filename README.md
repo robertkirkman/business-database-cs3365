@@ -23,10 +23,11 @@
 **Response:** The desired information has been retrieved from the database and successfully displayed for the client. 
 
 **Normal Flow:**
-1. The client decides a field and row to specify which cell to query.
-2. The client types those parameters in conjunction with the query command using the correct syntax. 
-3. The system uses the provided information to search the current working table for the desired data.
-4. Either the system identifies matching data and displays it to the client, or the syntax or provided information is incorrect and a descriptive error message is displayed.
+1. The client types desired information in the query command using the correct syntax.
+   a. An error message will return if the syntax is incorrect
+2. The system uses the provided information to search the current working table(s) for the desired data.
+3. Either the system identifies matching data and displays it to the client, or a null return message will appear
+
 
 **Use Case Name:** Modify Field
 
