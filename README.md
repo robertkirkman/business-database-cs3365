@@ -9,7 +9,7 @@
 **Potential Users:** Any small office or business, local governments, non-profit organizations, simulation and academic purposes, open source community developers.
 
 **Architecture Diagram:**
-![Architecture Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/ArchitectureDiagram.png)
+![Architecture Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/ArchitectureDiagram2.png)
 
 **Use Cases:**
 
