@@ -13,7 +13,6 @@
 **Use Case Diagrams:**
 ![Use Case Diagram Level 0](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/UseCaseDiagramLvl0.png)
 ![Use Case Diagram Level 1](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/UseCaseDiagramLvl1.png)
-![Use Case Diagram Level 2](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/UseCaseDiagramLvl2.png)
 
 **Use Case Name:** Query Field
 
@@ -71,7 +70,7 @@
 
 **Use Case Name:** Change Current Working Table
 
-**Use Case Description:** Change the current table to either the Orders table or the Client Customers table, the two tables that will be implemented.
+**Use Case Description:** Change the current table to either the Orders table, the Customers table, or the Employees table.
 
 **System:** Small Business Database
 
