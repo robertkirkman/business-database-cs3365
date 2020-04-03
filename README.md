@@ -40,19 +40,15 @@
 
 **System:** Small Business Database
 
-**Split Use Case:**
-*   **Unrestricted Entries:**
-    *   **Actors:** Client
-    *   **Stimulus:** The client has decided to change or delete the information contained in a specific cell in the current working table that does not have restricted editing permissions, and has the field, row, and information for the cell, if applicable. 
-*   **Restricted Entries:**
-    *   **Actors:** Administrator
-    *   **Stimulus:** The administrator has decided to change or delete the information contained in a restricted cell in the current working table that only the administrator has editing permissions for, and has the field, row, and information for the cell, if applicable. 
+**Actors:** Client
+
+**Stimulus:** The client has decided to change or delete the information contained in a specific cell in the current working table, and has the field, row, and information for the cell, if applicable.
 
 **Response:** The information in the cell is modified to reflect the desired changes.
 
 **Normal Flow:**
-1. The client or administrator has decided to change or delete information contained in a specific cell that they have permission to modify.
-2. The client or administrator either types the field, row and data to modify in conjunction with the modify command, or the delete command in conjunction with the field and row to delete, using the correct syntax.
+1. The client has decided to change or delete information contained in a specific cell that they have permission to modify.
+2. The client either types the field, row and data to modify in conjunction with the modify command, or the delete command in conjunction with the field and row to delete, using the correct syntax.
 3. The system uses the provided information to search the current working table for the desired cell.
 4. Either the system identifies the desired cell and modifies or deletes its content as specified, or the syntax or parameters are incorrect and a descriptive error message is displayed.
 
