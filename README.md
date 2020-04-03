@@ -9,6 +9,7 @@
 **Potential Users:** Any small office or business, local governments, non-profit organizations, simulation and academic purposes, open source community developers.
 
 **Use Cases:**
+
 **Use Case Diagrams:**
 ![Use Case Diagram Level 0](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/UseCaseDiagramLvl0.png)
 ![Use Case Diagram Level 1](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/UseCaseDiagramLvl1.png)
