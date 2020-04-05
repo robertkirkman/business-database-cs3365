@@ -11,6 +11,9 @@
 **Architecture Diagram:**
 ![Architecture Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/ArchitectureDiagram2.png)
 
+**Class Diagram:**
+![Class Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/ClassDiagram.png)
+
 **State Diagrams:**
 
 **CurrentTableObj State Diagram:**
