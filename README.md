@@ -17,7 +17,7 @@
 **State Diagrams:**
 
 **CurrentTableObj State Diagram:**
-![CurrentTableObj State Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/CurrentTableObjStateDiagram.png)
+![CurrentTableObj State Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/CurrentTableObjStateDiagram2.png)
 **CustomerTableObj State Diagram:**
 ![CustomerTableObj State Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/CustomerTableObjStateDiagram.png)
 **EmployeeTableObj State Diagram:**
