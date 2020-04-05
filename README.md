@@ -23,6 +23,7 @@
 ![OrderTableObj State Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/OrderTableObjStateDiagram.png)
 
 **Sequence Diagrams:**
+
 **Query Sequence Diagram:**
 ![Query Sequence Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/QuerySequenceDiagram.png)
 **Modify Sequence Diagram:**
