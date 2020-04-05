@@ -11,6 +11,26 @@
 **Architecture Diagram:**
 ![Architecture Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/ArchitectureDiagram2.png)
 
+**State Diagrams:**
+**CurrentTableObj State Diagram:**
+![CurrentTableObj State Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/CurrentTableObjStateDiagram.png)
+**CustomerTableObj State Diagram:**
+![CustomerTableObj State Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/CustomerTableObjStateDiagram.png)
+**EmployeeTableObj State Diagram:**
+![EmployeeTableObj State Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/EmployeeTableObjStateDiagram.png)
+**OrderTableObj State Diagram:**
+![OrderTableObj State Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/OrderTableObjStateDiagram.png)
+
+**Sequence Diagrams:**
+**Query Sequence Diagram:**
+![Query Sequence Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/QuerySequenceDiagram.png)
+**Modify Sequence Diagram:**
+![Modify Sequence Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/ModifySequenceDiagram.png)
+**Export Sequence Diagram:**
+![Export Sequence Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/ExportSequenceDiagram.png)
+**Change Current Working Table Sequence Diagram:**
+![Change Current Working Table Sequence Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/ChangeTableSequenceDiagram.png)
+
 **Use Cases:**
 
 **Use Case Diagrams:**
