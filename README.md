@@ -12,6 +12,7 @@
 ![Architecture Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/ArchitectureDiagram2.png)
 
 **State Diagrams:**
+
 **CurrentTableObj State Diagram:**
 ![CurrentTableObj State Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/CurrentTableObjStateDiagram.png)
 **CustomerTableObj State Diagram:**
