@@ -4,7 +4,7 @@
 
 **Github Link:** https://github.com/robertkirkman/business-database-cs3365
 
-**Goal:** Fulfil the order record-keeping and client information needs of a small business using a straightforward relational database.
+**Goal:** Fulfil the order record-keeping and client information needs of a small business using a straightforward database.
 
 **Potential Users:** Any small office or business, local governments, non-profit organizations, simulation and academic purposes, open source community developers.
 
@@ -114,10 +114,18 @@
 3. The system matches the provided information to the desired table name.
 4. The system switches the client’s current working table to the specified selection.
 
-**Contribution:**
+**Contributions:**
 
-Robert Kirkman: Modify Field Use Case
+**Use Case Diagrams:** Connor Irvine & Robert Kirkman
 
-Connor Irvine: Query Field Use Case
+**Use Case Specifications:** Robert Kirkman, Lora Milam & Connor Irvine
 
-Lora Milam: Export Use Case
+**Architecture Diagram:** Robert Kirkman
+
+**Class Diagram:** Connor Irvine, Robert Kirkman & Lora Milam
+
+**Sequence Diagrams:** Robert Kirkman
+
+**State Diagrams:** Robert Kirkman
+
+**Activity Diagram:** Connor Irvine
