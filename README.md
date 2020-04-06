@@ -36,6 +36,9 @@
 **Change Current Working Table Sequence Diagram:**
 ![Change Current Working Table Sequence Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/ChangeTableSequenceDiagram.png)
 
+**Activity Diagram:**
+![Activity Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/Activity%20Diagram.png)
+
 **Use Cases:**
 
 **Use Case Diagrams:**
