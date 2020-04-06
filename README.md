@@ -12,7 +12,7 @@
 ![Architecture Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/ArchitectureDiagram2.png)
 
 **Class Diagram:**
-![Class Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/Class_Diagram.png)
+![Class Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/Class%20Diagram.png)
 
 **State Diagrams:**
 
