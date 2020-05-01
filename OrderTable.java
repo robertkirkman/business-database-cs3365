@@ -11,8 +11,9 @@ import java.util.*;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-public class OrderTable extends Table
+public class OrderTable implements Table
 {
+	public int FieldIndex;
 	// Pre-chosen table fields using dynamically allocated arrays
 	private ArrayList<String> OrderNumber = new ArrayList<String>();
 	private ArrayList<String> OrderItem = new ArrayList<String>();

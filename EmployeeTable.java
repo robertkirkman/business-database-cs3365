@@ -11,8 +11,9 @@ import java.util.*;
 import java.util.Arrays;
 import java.util.ArrayList;
 
-public class EmployeeTable extends Table 
+public class EmployeeTable implements Table 
 {
+	public int FieldIndex;
 	// Pre-chosen table fields using dynamically allocated arrays
 		private ArrayList<String> EmployeeName = new ArrayList<String>();
 		private ArrayList<String> EmployeeAddress = new ArrayList<String>();

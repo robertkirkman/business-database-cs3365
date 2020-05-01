@@ -8,8 +8,9 @@ package smallbusinessdb;
 
 import java.util.ArrayList;
 
-public class CustomerTable extends Table
+public class CustomerTable implements Table
 {
+	public int FieldIndex;
 	// Pre-chosen table fields using dynamically allocated arrays
 	private ArrayList<String> CustomerName = new ArrayList<String>();
 	private ArrayList<String> CustomerAddress = new ArrayList<String>();

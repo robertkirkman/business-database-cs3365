@@ -6,29 +6,14 @@
 
 package smallbusinessdb;
 
-public class Table
-{
-	//index variable used when methods that access fields are called
-	protected int FieldIndex;
-	
+public interface Table
+{	
 	//methods to be overridden 
-	public String QueryTableField(String FieldName, String QueryStr)
-	{
-		return "This method is to be overridden.";
-	}
+	String QueryTableField(String FieldName, String QueryStr);
 	
-	public String ModifyTableField(String FieldName, String QueryStr, String EntryStr)
-	{
-		return "This method is to be overridden.";
-	}
+	String ModifyTableField(String FieldName, String QueryStr, String EntryStr);
 	
-	public String ExpandTableField(String FieldName, String EntryStr, String IndexStr)
-	{
-		return "This method is to be overridden.";
-	}
+	String ExpandTableField(String FieldName, String EntryStr, String IndexStr);
 	
-	public String DeleteFieldEntry(String FieldName, String QueryStr)
-	{
-		return "This method is to be overridden.";
-	}
+	String DeleteFieldEntry(String FieldName, String QueryStr);
 }
