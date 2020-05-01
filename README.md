@@ -117,6 +117,10 @@
 3. The system matches the provided information to the desired table name.
 4. The system switches the client’s current working table to the specified selection.
 
+**Design Patterns:**
+
+Facade Design Pattern: The facade design pattern hides the internal operation of the program from the client. This is a structural pattern which uses a Java interface to abstract the operation of the program's classes and methods. The primary locations where this is implemented start at `Table.java:9`, `OrderTable.java:14`, `CustomerTable.java:11` and `EmployeeTable.java:14`.
+
 **Contributions:**
 
 **Use Case Diagrams:** Connor Irvine & Robert Kirkman
