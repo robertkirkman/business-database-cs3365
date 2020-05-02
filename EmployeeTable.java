@@ -31,7 +31,7 @@ public class EmployeeTable implements Table
 		}
 		
 		//Concatenate order information into a readable string for display
-		private String GetEmployeeInfo(int FieldIndex)
+		public String GetInfo(int FieldIndex)
 		{
 			return  "\n Name: " + EmployeeName.get(FieldIndex) + 
 					"\n Address: " + EmployeeAddress.get(FieldIndex) +
@@ -49,25 +49,25 @@ public class EmployeeTable implements Table
 				case "Name":
 				{
 					if((FieldIndex = EmployeeName.indexOf(QueryString)) != -1)
-						return GetEmployeeInfo(FieldIndex);
+						return GetInfo(FieldIndex);
 					else return "\nEmployee name not found.";
 				}
 				case "Address":
 				{
 					if((FieldIndex = EmployeeAddress.indexOf(QueryString)) != -1)
-						return GetEmployeeInfo(FieldIndex);
+						return GetInfo(FieldIndex);
 					else return "\nEmployee address not found.";
 				}
 				case "Work Phone":
 				{
 					if((FieldIndex = EmployeeWorkPhone.indexOf(QueryString)) != -1)
-						return GetEmployeeInfo(FieldIndex);
+						return GetInfo(FieldIndex);
 					else return "\nEmployee work number not found.";
 				}
 				case "Home Phone":
 				{
 					if((FieldIndex = EmployeeHomePhone.indexOf(QueryString)) != -1)
-						return GetEmployeeInfo(FieldIndex);
+						return GetInfo(FieldIndex);
 					else return "\nEmployee home number not found.";
 				}
 				default:
@@ -229,5 +229,9 @@ public class EmployeeTable implements Table
 				default: return "\nFieldname not found";
 			}
 			
+		}
+		public int GetTableLength()
+		{
+			return this.EmployeeName.size();
 		}
 }

@@ -31,7 +31,7 @@ public class OrderTable implements Table
 	}
 	
 	//Concatenate order information into a readable string for display
-	private String GetOrderInfo(int FieldIndex)
+	public String GetInfo(int FieldIndex)
 	{
 		return  "\n Order Number: " + OrderNumber.get(FieldIndex) + 
 				"\n Order Item: " + OrderItem.get(FieldIndex) +
@@ -49,25 +49,25 @@ public class OrderTable implements Table
 			case "OrderNumber":
 			{
 				if((FieldIndex = OrderNumber.indexOf(QueryString)) != -1)
-					return GetOrderInfo(FieldIndex);
+					return GetInfo(FieldIndex);
 				else return "\nOrder number not found.";
 			}
 			case "Item":
 			{
 				if((FieldIndex = OrderItem.indexOf(QueryString)) != -1)
-					return GetOrderInfo(FieldIndex);
+					return GetInfo(FieldIndex);
 				else return "\nOrder item not found.";
 			}
 			case "Amount":
 			{
 				if((FieldIndex = OrderItemAmount.indexOf(QueryString)) != -1)
-					return GetOrderInfo(FieldIndex);
+					return GetInfo(FieldIndex);
 				else return "\nOrder item Amount not found.";
 			}
 			case "Date":
 			{
 				if((FieldIndex = OrderDate.indexOf(QueryString)) != -1)
-					return GetOrderInfo(FieldIndex);
+					return GetInfo(FieldIndex);
 				else return "\nOrder item not found.";
 			}
 			default:
@@ -230,5 +230,8 @@ public class OrderTable implements Table
 		}
 		
 	}
-
+	public int GetTableLength()
+	{
+		return this.OrderNumber.size();
+	}
 }

@@ -16,4 +16,6 @@ public interface Table
 	String ExpandTableField(String FieldName, String EntryStr, String IndexStr);
 	
 	String DeleteFieldEntry(String FieldName, String QueryStr);
+	
+	int GetTableLength();
 }

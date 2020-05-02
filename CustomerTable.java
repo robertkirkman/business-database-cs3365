@@ -28,7 +28,7 @@ public class CustomerTable implements Table
 	}
 	
 	//Concatenate customer information into a readable string for display
-	private String GetCustomerInfo(int FieldIndex)
+	public String GetInfo(int FieldIndex)
 	{
 		return "Name: " + CustomerName.get(FieldIndex) + ". Address: " + CustomerAddress.get(FieldIndex)
 		+ ". Work Phone: " + CustomerWorkPhone.get(FieldIndex) + ". Cell Phone: " 
@@ -45,25 +45,25 @@ public class CustomerTable implements Table
 			case "Name":
 				{
 					if ((FieldIndex = CustomerName.indexOf(QueryStr)) != -1)
-						return GetCustomerInfo(FieldIndex);
+						return GetInfo(FieldIndex);
 					else return "Name entry not found.";
 				}
 			case "Address":
 				{
 					if ((FieldIndex = CustomerAddress.indexOf(QueryStr)) != -1)
-						return GetCustomerInfo(FieldIndex);
+						return GetInfo(FieldIndex);
 					else return "Address entry not found.";
 				}
 			case "Work Phone":
 				{
 					if ((FieldIndex = CustomerWorkPhone.indexOf(QueryStr)) != -1)
-						return GetCustomerInfo(FieldIndex);
+						return GetInfo(FieldIndex);
 					else return "Work phone entry not found.";
 				}
 			case "Cell Phone":
 				{
 					if ((FieldIndex = CustomerCellPhone.indexOf(QueryStr)) != -1)
-						return GetCustomerInfo(FieldIndex);
+						return GetInfo(FieldIndex);
 					else return "Cell phone entry not found.";
 				}
 			default:
@@ -236,5 +236,9 @@ public class CustomerTable implements Table
 			default:
 				return "Fieldname not found.";
 		}
+	}
+	public int GetTableLength()
+	{
+		return this.CustomerName.size();
 	}
 }
