@@ -1,3 +1,8 @@
+/* 
+ *  Author ......: Lora Milam
+ *  Course.......: CS 3365
+ *  Description..: ExportCSV Class for Small Business Database
+ */
 package smallbusinessdb;
 
 import java.io.*;
