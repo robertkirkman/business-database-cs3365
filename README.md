@@ -15,7 +15,7 @@ Facade Design Pattern: The facade design pattern hides the internal operation of
 Screenshot of application using the code implemented with the facade design pattern:
 ![Screenshot1](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/screenshot.png)
 
-Singleton Design Pattern: This pattern design is used with `SmallBusinessDatabase.java` and `ExportCSV.Java`. `SmallBusinessDatabase.java`, through main, "asks" `ExportCSV.java` for an instance of the requested table; either customer, orders, or employee. `ExportCSV.java` then returns that instance back to `SmallBusinessDatabase.java`. Locations where this occurs: `SmallBusinessDatabase.java:45`, `SmallBusinessDatabase.java:120` through `SmallBusinessDatabase:128`, `ExportCSV:22` through `ExportCSV:55`
+Singleton Design Pattern: This pattern design is used with `SmallBusinessDatabase.java` and `ExportCSV.Java`. `SmallBusinessDatabase.java`, through main, "asks" `ExportCSV.java` for an instance of the requested table; either customer, orders, or employee. `ExportCSV.java` then returns that instance back to `SmallBusinessDatabase.java`. Locations where this occurs: `SmallBusinessDatabase.java:45`, `SmallBusinessDatabase.java:120` through `SmallBusinessDatabase.java:128`, `ExportCSV.java:22` through `ExportCSV.java:55`
 
 (PASTE SCREENSHOT OF SINGLETON HERE)
 
