@@ -1,8 +1,3 @@
-/* 
- *  Author ......: Lora Milam
- *  Course.......: CS 3365
- *  Description..: Export Function Class for Small Business Database
- */
 package smallbusinessdb;
 
 import java.io.*;
@@ -10,7 +5,16 @@ import java.util.*;
 import java.awt.Desktop;
 
 public class ExportCSV {
-  public static void ExportCSV(String[] args) throws IOException {
+  //create instance  
+  private static ExportCSV export = new ExportCSV();
+  
+  private ExportCSV(){}
+  
+  public static ExportCSV getInstance(){
+      return export;
+  }
+  
+  public void showMessage(String[] args) throws IOException {
     /////////////////////READS CSV/////////////////////////
     List<List<String>> records = new ArrayList<>();
     //String[] filepath = new String[5];
