@@ -14,31 +14,14 @@ public class ExportCSV {
       return export;
   }
   
-  public void showMessage(String[] args) throws IOException {
-    /////////////////////READS CSV/////////////////////////
-    List<List<String>> records = new ArrayList<>();
-    //String[] filepath = new String[5];
-    //filepath[0]="C:\\Users\\Milam\\Desktop\\Book1.csv";
-    try (BufferedReader br = new BufferedReader(new FileReader(args[0]))) {
-        String line;
-        while ((line = br.readLine()) != null) {
-            String[] values = line.split(" ");
-            records.add(Arrays.asList(values));
-        }
-    }catch(FileNotFoundException e)
-    {
-        e.printStackTrace();
-    }catch (IOException e) {
-        e.printStackTrace();
-    }
-    
+  public void showMessage(Table args) throws IOException {
     //////////////////////WRITES TXT//////////////////////////
     try{
         FileWriter writer = new FileWriter("YourFile.txt",false);
         
-        for (int i=0 ; i< records.size();i++)
+        for (int i=0 ; i< Integer.valueOf(args.GetTableLength());i++)
         {
-        writer.write(""+records.get(i));
+        writer.write(""+args.GetInfo(i));
         writer.write("\r\n");
         }
         writer.close();
