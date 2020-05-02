@@ -139,3 +139,5 @@ Screenshot of application using the code implemented with the facade design patt
 **State Diagrams:** Robert Kirkman
 
 **Activity Diagram:** Connor Irvine
+
+**Facade Design Pattern:** Robert Kirkman
