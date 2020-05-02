@@ -4,7 +4,7 @@
  * Description..: Employee table class for small business database
  */
 
-package smallbusinessdb;
+package smallbusinessdatabase;
 
 import java.io.*;
 import java.util.*;

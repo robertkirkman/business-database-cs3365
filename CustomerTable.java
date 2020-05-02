@@ -4,7 +4,7 @@
  *  Description..: Customer Table Class for Small Business Database
  */
 
-package smallbusinessdb;
+package smallbusinessdatabase;
 
 import java.util.ArrayList;
 

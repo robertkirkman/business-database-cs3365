@@ -3,7 +3,7 @@
  *  Course.......: CS 3365
  *  Description..: Wrapper class and main method for Small Business Database
  */
-package smallbusinessdb;
+package smallbusinessdatabase;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -15,7 +15,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.io.File;
 
-public class Smallbusinessdb
+public class SmallBusinessDatabase
 {
 	public static void main(String[] args)throws IOException
 	{

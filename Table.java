@@ -4,7 +4,7 @@
  *  Description..: Virtual Table Class for Small Business Database
  */
 
-package smallbusinessdb;
+package smallbusinessdatabase;
 
 public interface Table
 {	

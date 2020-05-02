@@ -3,7 +3,7 @@
  *  Course.......: CS 3365
  *  Description..: ExportCSV Class for Small Business Database
  */
-package smallbusinessdb;
+package smallbusinessdatabase;
 
 import java.io.*;
 import java.util.*;
