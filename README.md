@@ -8,6 +8,13 @@
 
 **Potential Users:** Any small office or business, local governments, non-profit organizations, simulation and academic purposes, open source community developers.
 
+**Design Patterns Used:**
+
+Facade Design Pattern: The facade design pattern hides the internal operation of the program from the client. This is a structural pattern which uses a Java interface to abstract the operation of the program's classes and methods. The primary locations where this is implemented start at `Table.java:9`, `OrderTable.java:14`, `CustomerTable.java:11` and `EmployeeTable.java:14`.
+
+Screenshot of application using the code implemented with the facade design pattern:
+![Screenshot1](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/screenshot.png)
+
 **Architecture Diagram:**
 ![Architecture Diagram](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/ArchitectureDiagram2.png)
 
@@ -116,13 +123,6 @@
 2. The client types that table’s parameter in conjunction with the change working table command using the correct syntax.
 3. The system matches the provided information to the desired table name.
 4. The system switches the client’s current working table to the specified selection.
-
-**Design Patterns:**
-
-Facade Design Pattern: The facade design pattern hides the internal operation of the program from the client. This is a structural pattern which uses a Java interface to abstract the operation of the program's classes and methods. The primary locations where this is implemented start at `Table.java:9`, `OrderTable.java:14`, `CustomerTable.java:11` and `EmployeeTable.java:14`.
-
-Screenshot of application using the code implemented with the facade design pattern:
-![Screenshot1](https://raw.githubusercontent.com/robertkirkman/business-database-cs3365/master/screenshot.png)
 
 **Contributions:**
 
