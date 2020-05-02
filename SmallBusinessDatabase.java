@@ -15,7 +15,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.io.File;
 
-public class SmallBusinessDatabase
+public class Smallbusinessdb
 {
 	public static void main(String[] args)throws IOException
 	{
@@ -119,12 +119,12 @@ public class SmallBusinessDatabase
 				}
 				case "export": //exports CSV as a TXT
 				{
+                                    
 					ExportCSV object = ExportCSV.getInstance();
-					String[] filepath = new String[5]; 
-					filepath[0]=DatabaseFilenameObj.getAbsolutePath();
-					object.showMessage(filepath);
+					object.showMessage(CurrentTableObj);
 					System.out.println("Your file has been exported");
-					break;
+					
+                                    break;
 				}
 				case "changetable":
 				{
@@ -198,4 +198,4 @@ public class SmallBusinessDatabase
 		//Close input scanner
 		UserInput.close();
 	}
-}
+} 
