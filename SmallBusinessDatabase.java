@@ -96,34 +96,35 @@ public class SmallBusinessDatabase
 				}
 				case "modify":
 				{
-                    if (InputBufArray.length == 4)
-                        System.out.println(CurrentTableObj.ModifyTableField(InputBufArray[1], InputBufArray[2], 
-                            InputBufArray[3]));
-                    else System.out.println("Incorrect parameters.");
+					if (InputBufArray.length == 4)
+						System.out.println(CurrentTableObj.ModifyTableField(InputBufArray[1], InputBufArray[2], 
+						InputBufArray[3]));
+                  			else System.out.println("Incorrect parameters.");
 					break;
 				}
 				case "expand":
 				{
 					if (InputBufArray.length == 4)
 						System.out.println(CurrentTableObj.ExpandTableField(InputBufArray[1], InputBufArray[2], 
-							InputBufArray[3]));
+						InputBufArray[3]));
 					else System.out.println("Incorrect parameters.");
 					break;
 				}
 				case "delete":
 				{
 					if (InputBufArray.length == 3)
-                        System.out.println(CurrentTableObj.DeleteFieldEntry(InputBufArray[1], InputBufArray[2]));
+                        		System.out.println(CurrentTableObj.DeleteFieldEntry(InputBufArray[1], InputBufArray[2]));
 					else System.out.println("Incorrect parameters.");
 					break;
 				}
 				case "export": //exports CSV as a TXT
 				{
-			        String[] filepath = new String[5];
-    				filepath[0]=DatabaseFilenameObj.getAbsolutePath();
-    				ExportCSV.ExportCSV(filepath);
-    				System.out.println("Your file has been exported");
-    				break;
+					ExportCSV object = ExportCSV.getInstance();
+					String[] filepath = new String[5]; 
+					filepath[0]=DatabaseFilenameObj.getAbsolutePath();
+					object.showMessage(filepath);
+					System.out.println("Your file has been exported");
+					break;
 				}
 				case "changetable":
 				{
